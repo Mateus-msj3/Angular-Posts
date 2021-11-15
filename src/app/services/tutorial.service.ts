@@ -16,6 +16,10 @@ export class TutorialService {
     return this.http.get<Tutorial[]>(baseUrl);
   }
 
+  get(id: any): Observable<Tutorial> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
